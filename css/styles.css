@@ -1,0 +1,295 @@
+:root{/*todo lo que yo agrege en el root puede ser usado con el comando var()*/
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+    
+}
+/*Globales*/
+html{
+    font-size: 62.5%;/*dimencion global de la barra de navegacion*/
+    box-sizing: border-box;/*elimina el ahumento que puede generar una margen o un padding al momento de agregarlo a un contenedor*/
+    scroll-snap-type: y mandatory;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+
+body{
+    font-size: 16px; /*1rm = 10px*/
+    font-family: "Krub", sans-serif;/*es la letra que voy a usar globalmente*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);/* se usa para poner un degradado de fondo total (hacia donde va, color inicial,color final)*/
+}
+
+.contenedor {
+    max-width: 120rem;/*esta es la dimencion que va tomar el recuadro maximo si necesita menos ella se adapta*/
+    margin: 0 auto;/*es la separacion que se le va a dar a la barra de navegacion arriba y abajo*/
+
+}
+
+
+.boton{
+    background-color: var(--secundario);/* el color que va tener de fondo nuestro boton*/
+    color: var(--blanco);/*el color de la letra de nuestro boton*/
+    padding: 1rem 3rem;/*dimenciones de nuestro boton*/
+    margin-top: 3rem;/*margen de nuestro boton hacia otros objetos en este caso arriba */
+    font-size: 2rem;/*dimencion del boton ahumentada*/
+    text-decoration: none;/*se le quita la linea que tiene dicho boton por ser link*/
+    text-transform: uppercase;/*se pone en mayuscula este boton*/
+    font-weight: bold; /* se le pone en negrilla este boton*/
+    border-radius: .5rem;/* se le pone borde circular a este boton*/
+    width: 90%;/*la dimencion del boton se dice que ocupe el 90%*/
+    text-align: center;/*se alinea el texto en el centro*/
+    border: none;
+}
+
+@media (min-width: 768px)  {
+    .boton{
+        width: auto;/* para cualquier boton que supere dichas dimenciones se acomodara automanticamente a su dimencion */
+    } 
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);/*es el prejijo usado por chrome para agregar sombras*/
+    -moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);/* es el prefijo por mozila para sombras*/
+    box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48); /* es para agregar sombras*/
+    background-color: var(--blanco);/* color de la sombra*/
+    padding: 2rem;/* distancia del texto al borde del contenedor*/
+    margin-top: 2rem;/* margen del contenedor al contenedor de arriba*/
+    border-radius: 1rem;/* borde que se le dio al contenedor*/
+}
+
+/*Tipografia*/
+h1{
+    font-size: 3.8rem;/*es la dimencion que va tomar el h1 */
+}
+
+h2{
+    font-size: 2.8rem;/*es la dimencion que va tomar el h2*/
+}
+
+h3{
+    font-size: 1.8rem;/*es la dimencion que va tomar el h3*/
+}
+
+h1,h2,h3{
+    text-align: center;/*centro el titulo*/
+}
+
+/*Titulos*/
+
+.titulo span{
+    font-size: 2rem;/*dimencion del titulo.span*/
+}
+
+/*scroll*/
+.servicios,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+/*Utilidades*/
+
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px)  {
+    .w-sm-100{
+        width: auto;
+    }
+}
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+
+
+
+/*Navegacion principal*/
+
+.nav-bag{
+    background-color: var(--secundario);/*color que se le va a dar a la barra de navegacion*/
+}
+
+.navegacion-principal {
+   display: flex;/*nos habilita lo que es flex-box para alinear los elementos*/
+   flex-direction: column;/* es la forma que va tener la barra menu, row es el predeterminado pero si uso colunm lo que hace es ponerlas en columnas*/
+   
+}
+
+@media (min-width: 768px)  {
+    .navegacion-principal{
+        flex-direction: row;/*habilito el justify-content*/
+        justify-content: space-between;/*es el formato que le doy al menu en este caso spacio entre ellos*/
+    }
+}
+
+.navegacion-principal a{
+    display: block;/*va hacer que usen todo el espacio*/
+    text-align: center;/*alineo el texto en el centro*/
+    color:white;/* cambia el color del taxto a blanco*/
+    text-decoration: none;/*le quita la linea del subrrallado al texto*/
+    font-size: 2rem;/*ahumento la dimencion de la letra*/
+    font-weight: bold;/*ahumento el grosor de la letra*/
+    padding: 1rem;/* es la separacion del limite del elmento hacia dentro*/
+}
+
+.navegacion-principal a:hover {/*hover es un evento de css y lo agrego para cuando el usuario hace algo en especifico*/
+    color: var(--oscuro);/*cuando el usuario se pociciona sobre la palabra esta cambia de color*/
+    background-color: var(--primario);/*se resalta la pocicion en la que esta la persona de otro color*/
+}
+
+/*Hero*/
+
+.hero {
+    background-image: url(../img/hero.jpg);/*voy al enlace de la imagen*/
+    background-repeat: no-repeat;/*a veces la imagen se repite si ahumento la dimencion de la pantalla con esto hago que la imagen no se repita*/
+    background-size: cover;/*hago que la imagen cubra por totalidad el espacio usado */
+    height: 450px;/*ahumenta la dimencion de la imagen a 450px en este caso*/
+    position: relative;/* se usa para pocicionar un helemento como si fuera un mapa*/
+}
+
+.contenido-hero{
+    position: absolute;/*se usa con el position relativa en este caso el padre es relativo el hijo absoluto de esta manera se puede mover una imagen por un contenedor como si fuera un mapa*/
+    background-color: rgb(0 0 0 / 70%);/*es para darle el color y el % de sombra a una imagen*/
+    width: 100%;/*la dimencion que va tomar dicho recuadro de horizontal*/
+    height: 100%;/*la dimencion que va tomar dicho recuadro en vertical*/
+    display: flex;/* se usa para poder manejar el contenido que se va usar*/
+    flex-direction: column;/*se especifica que se va usar en columnas*/
+    align-items: center;/* se dice que se aplique en el centro horizontalmente*/
+    justify-content: center;/*y se dice que se aplique en el centro verticalmente*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);/* a lo que tenga el h2 y p se le dara el color blanco*/
+
+}
+
+.contenido-hero .ubicacion{
+    display: flex;/*habilito la funciones para alinear*/
+    align-items: flex-end;/*lo alineo de tal manera que el texto siga al lado pero en la posicion de abajo*/
+}
+
+/*Servicios*/
+
+@media (min-width: 768px)  {
+    .servicios{
+        display: grid;/*habilito usar grid*/
+        grid-template-columns: repeat(3, 1fr);/* creo 3 contenedores de 1 fracion cada uno osea 1/3 o 33.3% cada contenedor*/
+        column-gap: 10rem;/*pongo un margen en los contenedores de 1rem*/
+    }
+}
+
+
+.servicio{
+    display: flex;/*habilitamos flex*/
+    flex-direction: column;/*le damos sentido de columna a los items que estamos usando*/
+    align-items: center;/*centramos los items*/
+}
+
+
+.servicio h3{
+    color: var(--secundario);/*le doy el color a las letras*/
+    font-weight: normal;/*se le cambia su fuente a una normal*/
+}
+
+.servicio p {
+    line-height: 2;/*es el espaciado de las letras*/
+    text-align: center; /*alineo el texto en el centro*/
+}
+
+
+.servicio .iconos{
+    height: 15rem;/*dimencion dada a los iconos*/
+    width: 15rem;/*dimencion dada a los iconos*/
+    background-color: var(--primario);/*color del cuadrado*/
+    border-radius: 50%;/*bordes del cuadrado*/
+    display: flex;/* se usa para poder manejar el contenido que se va usar*/
+    justify-content: space-evenly;/*como se alinean los iconos*/
+    align-items: center;/* se dice que se aplique en el centro horizontalmente*/
+
+}
+
+
+/**contacto**/
+
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+}
+
+.formulario legend{
+    color: var(--primario);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2remxx;
+}
+
+@media (min-width: 768px)  {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+        grid-column: 1/3;
+    }
+}
+
+
+.campo {
+    margin-bottom: 1rem;
+
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.imput-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+
+/*footer*/
+
+.footer {
+    text-align: center;
+}
